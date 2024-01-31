@@ -1,0 +1,15 @@
+h1{
+    color: antiquewhite;
+}
+body{
+    background-color: green;
+    text-align: center;
+    color: white;
+}
+
+#game-btn{
+    color: #016f32;
+    width: 150px;
+    background-color: goldenrod;
+    margin-bottom: 10px;
+}
