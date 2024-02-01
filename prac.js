@@ -91,9 +91,16 @@ const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
 
+let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myleads"))
 
 console.log(localStorage.getItem("first"))
-localStorage.clear()
+// localStorage.clear()
+
+//checking if local storage is truthy or not?
+if(leadsFromLocalStorage){
+    myleads= leadsFromLocalStorage
+    renderLeads()
+}
 
 inputBtn.addEventListener("click", function(){
     myleads.push(inputEl.value)
