@@ -91,10 +91,15 @@ const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
 
+
+console.log(localStorage.getItem("first"))
+localStorage.clear()
+
 inputBtn.addEventListener("click", function(){
     myleads.push(inputEl.value)
    renderLeads()
    clearThis(inputEl)
+   localStorage.setItem("myleads", JSON.stringify(myleads))
    // or inputEl.value = ""
 })
 
@@ -125,6 +130,7 @@ function clearThis(inputEl) {
 }
 
 
+
 // function newTab(url) {
 //     var win = window.open(url, '_blank');
 //     win.focus();
@@ -143,3 +149,12 @@ function clearThis(inputEl) {
 // `
 
 // console.log(learnCoding);
+
+// let prac = `["www.google.com","www.twitter.com"]`
+// prac = JSON.parse(prac)
+// prac.push("www.linkedin.com")
+// console.log(prac)
+
+// prac = JSON.stringify(prac)
+// console.log(prac)
+
