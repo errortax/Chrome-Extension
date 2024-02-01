@@ -148,12 +148,7 @@ function clearThis(inputEl) {
 // how it is going?`
 // console.log(email)
 
-// let learnCoding = `How to start learning web development?
-// - Learn HTML
-// - Learn CSS
-// - Learn JavaScript
-// Use freeCodeCamp to learn all the above and much, much more !
-// `
+
 
 // console.log(learnCoding);
 
