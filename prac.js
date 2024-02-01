@@ -91,7 +91,7 @@ const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
 
-let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myleads"))
+const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myleads"))
 
 console.log(localStorage.getItem("first"))
 // localStorage.clear()
