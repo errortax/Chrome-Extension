@@ -90,11 +90,18 @@ let myleads = []
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
+const deleteBtn = document.getElementById("delete-btn")
 
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myleads"))
 
+//deleting the unnecessery
+deleteBtn.addEventListener("dblclick", function(){
+localStorage.clear()
+console.log("double clicked and cleared")
+})
+
 console.log(localStorage.getItem("first"))
-// localStorage.clear()
+
 
 //checking if local storage is truthy or not?
 if(leadsFromLocalStorage){
