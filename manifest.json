@@ -5,5 +5,8 @@
     "action" : {
         "default_popup" : "fruit.html",
         "default_icon": "images.png"
-    }
+    },
+    "permissions" : [
+        "tabs"
+    ]
 }
