@@ -26,6 +26,14 @@ input[type="text"]{
   border: 2px solid olive;
 }
 
+#tab-btn{
+  color: blue;
+  background-color: azure;
+  padding: 7px 15px;
+  margin-top: 20px;
+  border: 2px solid olive;
+}
+
 button:hover{
   color: black;
   cursor: pointer;
