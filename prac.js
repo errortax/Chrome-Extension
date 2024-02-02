@@ -1,120 +1,59 @@
-// let person = {
-//     name: "tasmia",
-//     age: 21,
-//     country: "Bangladesh"
-// }
+//welcome element
+const welcomeEl = document.getElementById("welcome-el")
+function greeting(greet, name, emoji) {
+    welcomeEl.textContent = `${greet}! ${name} ${emoji}`
+}
 
-
-// function logData(){
-//     console.log(person.name + " is "+person.age+" years old and lives in "+person.country)
-
-// }
-
-// logData()
-
-// let age = 100
-// if(age < 6){
-//     console.log("pass is free")
-// }else if(age >=6 && age <=17){
-//     console.log("child discount")
-// }else if(age <= 27 && age >=66){
-//     console.log("student discount")
-// }else if(age > 66){
-//     console.log("senior citizen discount")
-// }
-
-// let largeCountry = ["Tuvalua", "USA", "Bangladesh", "Indonesia", "Ireland"]
-// for(let i=0; i<largeCountry.length; i++){
-//     console.log("-"+ largeCountry[i])
-// }
-// console.log("now push and pull practice")
-// largeCountry.shift("tuvalua")
-// largeCountry.unshift("China")
-// largeCountry.pop();
-// largeCountry.push("India")
-
-// for(let i=0; i<largeCountry.length; i++){
-//     console.log("-"+ largeCountry[i])
-// }
-
-// let weekend = "sunday"
-// let month = 1
-// if ( weekend==="sunday" && month===1){
-//     console.log("no way 🫨!!")
-// }
-
-
-//  return Math.floor(Math.random()*6)+1
-// let hands = ["rock", "paper", "scisser"]
-
-// function game(){
-//  let i =Math.floor(Math.random()*3)
-//  console.log(hands[i])
-// }
-
-// game()
-// let fruits = ["🍎","🍎","🍎","🍊","🍊","🍊","🍎","🍎"]
-// let appleShelf = document.getElementById("apple-shelf")
-// let orangeShelf = document.getElementById("orange-shelf")
-
-// function place(){
-
-//     for(let i=0; i<fruits.length; i++){
-//         if(fruits[i]==="🍎"){
-//             appleShelf.textContent += "🍎"
-//         }else if(fruits[i]==="🍊"){
-//             orangeShelf.textContent += "🍊"
-//         }
-//     }
-// }
-// place()
-
-
-// let btn = document.getElementById("input-btn")
-
-// btn.addEventListener("click", function(){
-//     console.log("button clicked from event listener")
-// })
-
-// let myLeads = []
-// let inputEl = document.getElementById("input-el")
-
-// let divContainer = document.getElementById("container")
-// divContainer.innerHTML = "<button onclick='buy()'>" + "Buy!!" + "</button>"
-
-// function buy(){
-//     divContainer.innerHTML += "<p>" + "Thanks for buying " + "</p>"
-// }
+greeting("Hey there", "User", "😀")
 
 let myleads = []
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
 const deleteBtn = document.getElementById("delete-btn")
+const tabBtn = document.getElementById("tab-btn")
 
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myleads"))
 
 //deleting the unnecessery
-deleteBtn.addEventListener("dblclick", function(){
-localStorage.clear()
-console.log("double clicked and cleared")
+deleteBtn.addEventListener("dblclick", function () {
+    localStorage.clear()
+    myleads = []
+    render(myleads)
 })
 
 console.log(localStorage.getItem("first"))
 
 
 //checking if local storage is truthy or not?
-if(leadsFromLocalStorage){
-    myleads= leadsFromLocalStorage
-    renderLeads()
+if (leadsFromLocalStorage) {
+    myleads = leadsFromLocalStorage
+    render(myleads)
 }
 
-inputBtn.addEventListener("click", function(){
+inputBtn.addEventListener("click", function () {
     myleads.push(inputEl.value)
-   renderLeads()
-   clearThis(inputEl)
-   localStorage.setItem("myleads", JSON.stringify(myleads))
-   // or inputEl.value = ""
+    render(myleads)
+    clearThis(inputEl)
+    localStorage.setItem("myleads", JSON.stringify(myleads))
+    // or inputEl.value = ""
+})
+
+// const tabs = [
+//     { url: "https://www.linkedin.com/in/tasmia-binte-monzoor" }
+// ] dont need it anymore
+
+//for excessing chrome tabs
+
+tabBtn.addEventListener("click", function () {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        console.log(tabs[0].url)
+        myleads.push(tabs[0].url)
+        localStorage.setItem("myleads", JSON.stringify(myleads))
+        render(myleads)
+    })
+
+
 })
 
 // for(let i=0; i< myleads.length; i++){
@@ -124,46 +63,22 @@ inputBtn.addEventListener("click", function(){
 //     ulEl.append(li)
 // }
 
-function renderLeads(){
-let listItems = ""
+function render(leads) {
+    let listItems = ""
 
-for(let i=0; i<myleads.length; i++){
-    // listItems += "<li> <a target='_blank' href= '"+ myleads[i] +"'>" + myleads[i] + "</a></li>" 
-   listItems += `<li>
-    <a target="_blank" href=" ${myleads[i]}">
-   ${myleads[i]}
+    for (let i = 0; i < leads.length; i++) {
+        // listItems += "<li> <a target='_blank' href= '"+ myleads[i] +"'>" + myleads[i] + "</a></li>" 
+        listItems += `<li>
+    <a target="_blank" href=" ${leads[i]}">
+   ${leads[i]}
     </a>
    </li>`
-}
+    }
 
-ulEl.innerHTML = listItems
-}    
+    ulEl.innerHTML = listItems
+}
 
 function clearThis(inputEl) {
-    inputEl.value= "";
+    inputEl.value = ""
 }
-
-
-
-// function newTab(url) {
-//     var win = window.open(url, '_blank');
-//     win.focus();
-//   }
- 
-// const recipient = "james"
-// const email = `hey ${recipient} 
-// how it is going?`
-// console.log(email)
-
-
-
-// console.log(learnCoding);
-
-// let prac = `["www.google.com","www.twitter.com"]`
-// prac = JSON.parse(prac)
-// prac.push("www.linkedin.com")
-// console.log(prac)
-
-// prac = JSON.stringify(prac)
-// console.log(prac)
 
