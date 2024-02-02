@@ -242,3 +242,113 @@ function newCard(){
 // for(let i=0; i<sentence.length; i++){
 //     greetingEl.textContent += sentence[i]
 // }
+
+// let person = {
+//     name: "tasmia",
+//     age: 21,
+//     country: "Bangladesh"
+// }
+
+
+// function logData(){
+//     console.log(person.name + " is "+person.age+" years old and lives in "+person.country)
+
+// }
+
+// logData()
+
+// let age = 100
+// if(age < 6){
+//     console.log("pass is free")
+// }else if(age >=6 && age <=17){
+//     console.log("child discount")
+// }else if(age <= 27 && age >=66){
+//     console.log("student discount")
+// }else if(age > 66){
+//     console.log("senior citizen discount")
+// }
+
+// let largeCountry = ["Tuvalua", "USA", "Bangladesh", "Indonesia", "Ireland"]
+// for(let i=0; i<largeCountry.length; i++){
+//     console.log("-"+ largeCountry[i])
+// }
+// console.log("now push and pull practice")
+// largeCountry.shift("tuvalua")
+// largeCountry.unshift("China")
+// largeCountry.pop();
+// largeCountry.push("India")
+
+// for(let i=0; i<largeCountry.length; i++){
+//     console.log("-"+ largeCountry[i])
+// }
+
+// let weekend = "sunday"
+// let month = 1
+// if ( weekend==="sunday" && month===1){
+//     console.log("no way 🫨!!")
+// }
+
+
+//  return Math.floor(Math.random()*6)+1
+// let hands = ["rock", "paper", "scisser"]
+
+// function game(){
+//  let i =Math.floor(Math.random()*3)
+//  console.log(hands[i])
+// }
+
+// game()
+// let fruits = ["🍎","🍎","🍎","🍊","🍊","🍊","🍎","🍎"]
+// let appleShelf = document.getElementById("apple-shelf")
+// let orangeShelf = document.getElementById("orange-shelf")
+
+// function place(){
+
+//     for(let i=0; i<fruits.length; i++){
+//         if(fruits[i]==="🍎"){
+//             appleShelf.textContent += "🍎"
+//         }else if(fruits[i]==="🍊"){
+//             orangeShelf.textContent += "🍊"
+//         }
+//     }
+// }
+// place()
+
+
+// let btn = document.getElementById("input-btn")
+
+// btn.addEventListener("click", function(){
+//     console.log("button clicked from event listener")
+// })
+
+// let myLeads = []
+// let inputEl = document.getElementById("input-el")
+
+// let divContainer = document.getElementById("container")
+// divContainer.innerHTML = "<button onclick='buy()'>" + "Buy!!" + "</button>"
+
+// function buy(){
+//     divContainer.innerHTML += "<p>" + "Thanks for buying " + "</p>"
+// }
+
+// function newTab(url) {
+//     var win = window.open(url, '_blank');
+//     win.focus();
+//   }
+ 
+// const recipient = "james"
+// const email = `hey ${recipient} 
+// how it is going?`
+// console.log(email)
+
+
+
+// console.log(learnCoding);
+
+// let prac = `["www.google.com","www.twitter.com"]`
+// prac = JSON.parse(prac)
+// prac.push("www.linkedin.com")
+// console.log(prac)
+
+// prac = JSON.stringify(prac)
+// console.log(prac)
