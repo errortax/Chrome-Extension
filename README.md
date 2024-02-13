@@ -9,6 +9,8 @@
      <li>Pin the extension on the extension tab</li>
      <li>'Click' on save lead to save the links</li>
      <li>Done</li>
-     <li>Hurray</li>
+    
   </ul>
+  <h3>And you are all set to use it</h3>
+  <h3>Congratulations!</h3>
 </div>
