@@ -1,6 +1,6 @@
 <div>
   <h1>This a Lead Rendering Chrome Extension</h1>
-  <img src="extension.jpg">
+  <img src="https://github.com/errortax/Chrome-Extension/blob/main/extension.png">
   <h3> How to use guidelines</h3>
   <ul>
     <li>Download the files</li>
